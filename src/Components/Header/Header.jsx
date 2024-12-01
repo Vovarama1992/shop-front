@@ -27,6 +27,11 @@ export const Header = () => {
           <img src={cart} />
         </Link>
       </div>
+      <button className={styles.header_menu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
   );
 };

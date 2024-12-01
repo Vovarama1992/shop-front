@@ -61,4 +61,24 @@
   @media (max-width: 1200px) {
     padding: 50px;
   }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, calc(50%));
+    padding: 20px;
+    row-gap: 50px;
+
+    > :last-child {
+      grid-column: 1 / span 2;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 10px;
+    grid-template-columns: repeat(1, 100%);
+
+    > :last-child {
+      grid-column: 1/1;
+    }
+  }
 }

@@ -129,7 +129,11 @@
     }
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 526px) {
     padding: 0;
+
+    &_form {
+      padding: 20px 10px;
+    }
   }
 }
