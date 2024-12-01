@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface Role {
   name: string
   value: string
