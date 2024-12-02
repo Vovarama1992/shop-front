@@ -5,6 +5,7 @@ import { Signup } from "./Pages/Auth/Signup/Signup";
 import { Login } from "./Pages/Auth/SignIn/Signin";
 import { Header } from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
+import { Profile } from "./Pages/Profile/Profile";
 
 export const App = () => {
   return (
@@ -13,10 +14,11 @@ export const App = () => {
         <Header />
         <Routes>
           <Route path={"/registration"} element={<Signup />} />
+          <Route path={"/profile"} element={<Profile />} />
           <Route path={"/login"} element={<Login />} />
           <Route path={"/"} element={<Signup />} />
         </Routes>
-        <Footer />  
+        <Footer />
       </BrowserRouter>
     </SnackbarProvider>
   );

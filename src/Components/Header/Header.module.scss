@@ -26,6 +26,10 @@
   &_logo {
     width: 100px;
   }
+  
+  &_menu {
+    display: none;
+  }
 
   @media (max-width: 1200px) {
     padding: 10px 50px;
