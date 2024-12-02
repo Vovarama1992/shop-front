@@ -6,3 +6,9 @@
   box-sizing: border-box;
   font-family: Inter;
 }
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+}
