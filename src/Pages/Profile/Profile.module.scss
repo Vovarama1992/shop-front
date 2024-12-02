@@ -182,7 +182,7 @@
       }
     }
 
-      &_confirmLabel {
+    &_confirmLabel {
       display: flex;
       flex-direction: row;
       gap: 20px;
@@ -322,8 +322,7 @@
           font-weight: 400;
           line-height: 28.6px;
           color: #dc2a1f;
-          width: 110px;
-
+          max-width: 120px;
           @media (max-width: 1024px) {
             font-size: 18px;
             font-weight: 400;
