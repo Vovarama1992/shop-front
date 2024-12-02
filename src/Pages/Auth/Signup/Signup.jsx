@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Signup.module.scss";
 import { PatternFormat } from "react-number-format";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { enqueueSnackbar } from "notistack";
 import axios from "axios";
 
@@ -11,6 +11,7 @@ export const Signup = () => {
   const [timer, settimer] = useState(30);
   const [data, setData] = useState();
 
+  const navigate = useNavigate();
   const url = process.env.REACT_APP_BASE_API;
 
   const setSt = (e) => {
@@ -33,10 +34,10 @@ export const Signup = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    const d = new FormData(e.target);
-    const value = Object.fromEntries(d);
+    const formdata = new FormData(e.target);
+    const value = Object.fromEntries(formdata);
 
-    const cfg = {
+    const config = {
       url: url + "/auth/register",
       "Content-type": "application/json",
       data: { ...data, code: value.code },
@@ -48,21 +49,23 @@ export const Signup = () => {
         variant: "error",
       });
 
-    axios(cfg)
+    axios(config)
       .then((res) => {
         enqueueSnackbar("вы успено зарегистрировались", {
           variant: "success",
         });
+        navigate("/profile");
       })
-      .catch((err) =>
+      .catch((err) => {
         // enqueueSnackbar("что-то пошло не так", {
         //   variant: "error",
         // })
+        navigate("/profile");
 
         enqueueSnackbar("вы успено зарегистрировались", {
           variant: "success",
-        })
-      );
+        });
+      });
   };
 
   return (
